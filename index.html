@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>จดหมายถึงอาจารย์ | GE104</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#e8e0d5,#c9bba8);
+    font-family: 'Prompt', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #493d32;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    perspective: 1200px;
+}
+
+.page {
+    background: #fffdf7;
+    min-height: 700px;
+    padding: 65px;
+    border-radius: 5px;
+    box-shadow: 0 20px 60px #493d3230;
+    position: relative;
+    overflow: hidden;
+    animation: appear .8s ease;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border: 1px solid #d8c6a9;
+    pointer-events: none;
+}
+
+.cover {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-title {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #a58b6b;
+    margin-bottom: 35px;
+}
+
+.cover h1 {
+    font-family: 'Itim', cursive;
+    font-size: 55px;
+    color: #755b40;
+    margin-bottom: 12px;
+}
+
+.cover h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #9d8264;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    background: #c8a77d;
+    margin: 35px auto;
+}
+
+.info {
+    margin-top: 20px;
+    line-height: 2.5;
+    font-size: 17px;
+}
+
+.info strong {
+    color: #765c41;
+}
+
+.flower {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #b09c84;
+    letter-spacing: 2px;
+}
+
+.content h2 {
+    font-family: 'Itim', cursive;
+    font-size: 36px;
+    color: #806345;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.content h3 {
+    color: #8b7051;
+    font-size: 19px;
+    margin: 25px 0 12px;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 2.1;
+    font-weight: 300;
+    text-indent: 35px;
+    text-align: justify;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 40px;
+    line-height: 2;
+    color: #806345;
+}
+
+.signature p {
+    text-align: right;
+    text-indent: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button {
+    border: none;
+    background: #806345;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Prompt';
+    transition: .3s;
+}
+
+button:hover {
+    background: #a88b68;
+    transform: translateY(-3px);
+}
+
+button:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:600px) {
+    .page {
+        padding: 45px 30px;
+        min-height: 650px;
+    }
+
+    .cover h1 {
+        font-size: 39px;
+    }
+
+    .content h2 {
+        font-size: 29px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        display: block;
+        padding: 0;
+    }
+
+    .container {
+        max-width: none;
+    }
+
+    .page {
+        box-shadow: none;
+        border-radius: 0;
+        min-height: 100vh;
+        page-break-after: always;
+        display: flex !important;
+    }
+
+    .buttons {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- หน้าปก -->
+    <section class="page cover" id="page1">
+
+        <div class="flower">✉️</div>
+
+        <div class="small-title">
+            GENERAL EDUCATION
+        </div>
+
+        <h1>จดหมายถึงอาจารย์</h1>
+        <h2>สิ่งที่ได้รับจากรายวิชา GE104</h2>
+
+        <div class="line"></div>
+
+        <div class="info">
+            <div><strong>ชื่อ - นามสกุล</strong></div>
+            นายธนกร เขียนเสมอ
+
+            <div><strong>รหัสนักศึกษา</strong></div>
+            1690900137
+
+            <div><strong>เลขที่</strong></div>
+            4
+
+            <div><strong>รายวิชา</strong></div>
+            GE104
+        </div>
+
+        <div class="footer">
+            A LETTER OF APPRECIATION
+        </div>
+
+    </section>
+
+    <!-- หน้าที่สอง -->
+    <section class="page content hidden" id="page2">
+
+        <h2>สิ่งที่ได้รับจากรายวิชานี้</h2>
+
+        <h3>✦ ความรู้และประสบการณ์ที่ได้รับ</h3>
+
+        <p>
+            จากการเรียนรายวิชา GE104 ทำให้ผมได้รับความรู้
+            เกี่ยวกับด้านความคิดสร้างสรรค์ ได้เรียนรู้หลักแนวคิด
+            และกระบวนการคิดอย่างสร้างสรรค์ ซึ่งสามารถนำไป
+            ประยุกต์ใช้ในชีวิตประจำวัน รวมถึงการเรียนและ
+            การแก้ไขปัญหาต่าง ๆ ได้
+        </p>
+
+        <h3>✦ สิ่งที่อยากบอกอาจารย์</h3>
+
+        <p>
+            ผมรู้สึกว่ารายวิชานี้เป็นวิชาที่เรียนได้ง่ายมาก ๆ ครับ
+            อาจารย์สอนดีมาก อธิบายเนื้อหาได้เข้าใจง่าย
+            และเป็นกันเอง งานที่ได้รับมอบหมายก็ไม่ยาก
+            และมีปริมาณไม่มากจนเกินไป ทำให้ผมสามารถ
+            เรียนรู้และทำความเข้าใจเนื้อหาได้อย่างสบายใจครับ
+        </p>
+
+        <p>
+            สุดท้ายนี้ ผมขอขอบคุณอาจารย์มาก ๆ ครับ
+            ที่ตั้งใจสอนและมอบความรู้ดี ๆ ให้กับนักศึกษา
+            ขอบคุณสำหรับการเรียนการสอนที่สนุกและเข้าใจง่ายครับ
+        </p>
+
+        <div class="signature">
+            <p>ด้วยความเคารพอย่างสูง</p>
+            <p>นายธนกร เขียนเสมอ</p>
+            <p>นักศึกษารายวิชา GE104</p>
+        </div>
+
+        <div class="footer">
+            THANK YOU FOR EVERYTHING ♡
+        </div>
+
+    </section>
+
+    <div class="buttons">
+    <button id="prev" onclick="changePage(-1)" disabled>
+        ← ย้อนกลับ
+    </button>
+
+    <button id="next" onclick="changePage(1)">
+        เปิดจดหมาย →
+    </button>
+</div>
+
+</div>
+
+<script>
+let currentPage = 1;
+
+function changePage(direction) {
+
+    currentPage += direction;
+
+    document.getElementById("page1")
+        .classList.toggle("hidden", currentPage !== 1);
+
+    document.getElementById("page2")
+        .classList.toggle("hidden", currentPage !== 2);
+
+    document.getElementById("prev").disabled =
+        currentPage === 1;
+
+    document.getElementById("next").disabled =
+        currentPage === 2;
+
+    document.getElementById("next").innerText =
+        currentPage === 2 ? "เปิดจดหมายแล้ว ♡" : "เปิดจดหมาย →";
+}
+</script>
+
+</body>
+</html>
